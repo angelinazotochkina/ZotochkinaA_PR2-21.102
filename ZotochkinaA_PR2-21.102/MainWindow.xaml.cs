@@ -19,7 +19,7 @@ namespace ZotochkinaA_PR2_21._102
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow 
     { private void LoadLoginpage()
         {
           Autho loginPage = new Autho();
@@ -48,12 +48,22 @@ namespace ZotochkinaA_PR2_21._102
 
         private void btnback_Click(object sender, RoutedEventArgs e)
         {
-
+            if (FrmMain.CanGoBack)
+            {
+                FrmMain.GoBack();
+            }
         }
 
         private void btnback_Click_1(object sender, RoutedEventArgs e)
         {
-
+            if (FrmMain.CanGoBack)
+            {
+                btnback.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                btnback.Visibility = Visibility.Hidden;
+            }
         }
     }
 }

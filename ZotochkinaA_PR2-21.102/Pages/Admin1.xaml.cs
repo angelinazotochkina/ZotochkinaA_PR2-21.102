@@ -10,32 +10,29 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 using ZotochkinaA_PR2_21._102.Model;
 
 namespace ZotochkinaA_PR2_21._102.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для Client.xaml
+    /// Логика взаимодействия для Admin1.xaml
     /// </summary>
-    public partial class Client : Page
+    public partial class Admin1 : Page
     {
-       
         private Model.Users user;
-        public Client(Users users)
+        public Admin1(Users users)
         {
             InitializeComponent();
             user = users;
-            //lbGreetingClient.Content = $"{users.UserName} {users.UserSurname} {users.UserPatronymic}";
-           // var product = Entities.GetContext().Product.ToList();
-         //   LViewProduct.ItemsSource= product;
+            string greeting = greetUser.GetTimeOfDayGreeting();
+            DateTime currentTime = DateTime.Now;
+          //  lbGreetingAdmin.Content = $"{greeting},  {users.UserName} {users.UserSurname} {users.UserPatronymic},{currentTime}";
         }
 
-        private void btnback_Click(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-            
+            NavigationService?.Navigate(new WorkersPage());
         }
-        
     }
 }
